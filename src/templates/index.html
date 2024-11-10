@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+<form class="container py-3" style="max-width: 18%" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Введите страну:</label>
+        <input type="text" class="form-control" name="country">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Введите город:</label>
+        <input type="text" class="form-control" name="city">
+    </div>
+    <div class="btn-group">
+        <button type="submit" class="btn btn-primary btn-sm" name="other">Поиск</button>
+        <button type="submit" class="btn btn-success btn-sm" name="here">Температура здесь</button>
+    </div>
+    <div>
+        <h3>{{ location }}</h3>
+        <h2 style="color: lime">{{ temp }}</h2>
+    </div>
+</form>
+</body>
+</html>
